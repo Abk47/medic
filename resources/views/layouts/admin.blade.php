@@ -127,7 +127,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-check-double"></i>
+              <i class="nav-icon fas fa-spinner fa-spin"></i>
               <p>
                 Status
                 <span class="right badge badge-danger">Pending</span>
