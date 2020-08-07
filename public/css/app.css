@@ -10928,3 +10928,12 @@ a.text-dark:focus {
   }
 }
 
+/* My custom css */
+.dashboard-jumbo {
+  background-size: cover;
+  background-color: #DC3545;
+  color: white;
+  background: #ED213A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #93291E, #ED213A);
+  background: linear-gradient(to right, #93291E, #ED213A);  
+}
