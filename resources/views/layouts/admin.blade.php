@@ -40,10 +40,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Home</a>
+        <a href="/dashboard" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href='/contacts' class="nav-link">Contact</a>
       </li>
     </ul>
 
@@ -121,7 +121,7 @@
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Forms
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right">3</span>
               </p>
             </a>
           </li>
@@ -163,7 +163,7 @@
 
     <!-- Main content -->
     <main class="content">
-      <div class="container-fluid">
+      <div class="container-fluid" style="padding-bottom: 1px">
         @yield('content')
       </div><!-- /.container-fluid -->
     </main>
@@ -172,17 +172,11 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong> <a href="https://www.jubileeinsurance.com" style="color: #dc3545;">Jubilee Insurance Company of Tanzania.</a></strong>
+    <strong> <a href="https://www.jubileeinsurance.com" style="color: #d92334;">Jubilee Insurance Company of Tanzania.</a></strong>
     <div class="float-right d-none d-sm-inline-block">
-        Copyright &copy; 2020
+        copyright &copy; 2020
     </div>
   </footer>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
