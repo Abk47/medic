@@ -30,3 +30,7 @@ Route::get('/form1', function () {
 Route::get('/form2', function () {
     return view('forms.schedule');
 });
+
+Route::get('/form3', function () {
+    return view('forms.history');
+});
