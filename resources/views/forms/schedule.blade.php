@@ -32,7 +32,8 @@
             </tr>
          </tbody>
       </table>
-      <div class="row">
+      <div class="container mt-4" style="text-align: center">
+      <div class="row" style="display: inline-block">
          <!-- Adding a modal here -->
          <!-- Button trigger modal -->
          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#familyModal">
@@ -97,5 +98,7 @@
          <button type='submit' class='btn btn-outline-danger ml-2'>Next Page</button>
       </div>
    </div>
+   </div>
+   
 </div>
 @endsection
