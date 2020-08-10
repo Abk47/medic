@@ -21,6 +21,4 @@ Auth::routes();
 
 Route::get('/dashboard', 'AdminController@index')->name('dashboard');
 
-Route::get('/contacts', function(){
-    return view('contacts');
-});
+Route::get('/contacts', 'ContactController@show')->name('contacts');
