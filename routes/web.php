@@ -22,3 +22,11 @@ Auth::routes();
 Route::get('/dashboard', 'AdminController@index')->name('dashboard');
 
 Route::get('/contacts', 'ContactController@show')->name('contacts');
+
+Route::get('/form1', function () {
+    return view('forms.info');
+});
+
+Route::get('/form2', function () {
+    return view('forms.schedule');
+});
