@@ -7,7 +7,7 @@
    <div class="content-section p-4">
       <div class="row">
          <h2 class="form-heading" style='color:#b50c2e'>CONFIDENTIAL MEDICAL HISTORY II</h2>
-         <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#familyModal" >
+         <button type="button" class="btn btn-danger ml-auto" data-toggle="modal" data-target="#familyModal" >
          Add details
          </button>
       </div>
@@ -64,6 +64,7 @@
                      </div>
                      <div class="modal-body">
                         <form method="POST" action=''>
+                           @csrf
                            <!-- Adding fields -->
                            <div class="form-group">
                               <label for="relation" class="col-form-label pl-3">Name and relationship to the applicant</label>
@@ -116,12 +117,12 @@
                      </div>
                      <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-danger">Save</button>
                      </div>
                   </div>
                </div>
             </div>
-            <button type='submit' class='btn btn-primary'>Previous Page</button>
+            <button type='submit' class='btn btn-danger'>Previous Page</button>
             <button type='submit' class='btn btn-outline-danger'>Next Page <i class="fas fa-arrow-right"></i></button>
          </div>
       </div>

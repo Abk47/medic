@@ -8,7 +8,7 @@
       <div class="row">
          <h2 class="form-heading" style='color:#b50c2e'>SCHEDULE</h2>
          <!-- Button trigger modal -->
-         <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#familyModal">
+         <button type="button" class="btn btn-danger ml-auto" data-toggle="modal" data-target="#familyModal">
          Add Member
          </button>
       </div>
@@ -94,12 +94,12 @@
                      </div>
                      <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-danger">Save</button>
                      </div>
                   </div>
                </div>
             </div>
-            <button type='submit' class='btn btn-primary'>Previous Page</button>
+            <button type='submit' class='btn btn-danger'>Previous Page</button>
             <button type='submit' class='btn btn-outline-danger'>Next Page  <i class="fas fa-arrow-right"></i></button>
          </div>
       </div>

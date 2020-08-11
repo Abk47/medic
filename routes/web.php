@@ -38,3 +38,7 @@ Route::get('/form3', function () {
 Route::get('/form4', function () {
     return view('forms.details');
 });
+
+Route::get('/form5', function () {
+    return view('forms.declaration');
+});
