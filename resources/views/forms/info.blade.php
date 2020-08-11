@@ -85,7 +85,7 @@
               </div>
            </fieldset>
            <div class="form-group" style="text-align: center">
-              <button type='submit' class='btn btn-outline-danger'>Next Page</button>
+              <button type='submit' class='btn btn-outline-danger'>Next Page  <i class="fas fa-arrow-right"></i></button>
            </div>
         </form>
      </div>

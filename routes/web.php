@@ -34,3 +34,7 @@ Route::get('/form2', function () {
 Route::get('/form3', function () {
     return view('forms.history');
 });
+
+Route::get('/form4', function () {
+    return view('forms.details');
+});
