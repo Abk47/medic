@@ -187,12 +187,10 @@
 <script src={{ asset("plugins/jquery-ui/jquery-ui.min.js")}}></script>
 <!-- Bootstrap 4 -->
 <script src={{ asset("plugins/bootstrap/js/bootstrap.bundle.min.js")}}></script>
-<!-- overlayScrollbars -->
-<script src={{ asset("plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js")}}></script>
 <!-- AdminLTE App -->
 <script src={{ asset("dist/js/adminlte.min.js")}}></script>
 {{-- Custom javascript --}}
-<script src={{ asset('js/app.js')}}" defer></script>
+<script src={{ asset("js/app.js")}} defer></script>
 
 </body>
 </html>
