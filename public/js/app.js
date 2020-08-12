@@ -37348,19 +37348,3 @@ module.exports = __webpack_require__(/*! C:\Users\abuka.nshunju\Desktop\Projects
 /***/ })
 
 /******/ });
-
-// enabling submit button
-$('#terms').change(function () {
-  $('#submit').prop("disabled", !this.checked);
-}).change()
-
-// custom text area script
-let checker = document.getElementById('qsn1')
-let checker1 = document.getElementById('qsn1a')
-let textInput = document.getElementById('QsnTextarea1')
-
-checker.addEventListener('click', ()=> textInput.disabled = !checker.checked)
-checker1.addEventListener('click', ()=> textInput.disabled = !checker.checked)
-
-
-
