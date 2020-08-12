@@ -20,7 +20,7 @@
 <link rel="stylesheet" href={{ asset("plugins/icheck-bootstrap/icheck-bootstrap.min.css")}}>
 
 <!-- Styles -->
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link href={{ asset('css/app.css') }} rel="stylesheet">
 
 <!-- Theme style -->
 <link rel="stylesheet" href={{ asset("dist/css/adminlte.min.css") }}>
@@ -186,8 +186,22 @@
 <script src={{ asset("plugins/bootstrap/js/bootstrap.bundle.min.js")}}></script>
 <!-- AdminLTE App -->
 <script src={{ asset("dist/js/adminlte.min.js")}}></script>
+
 {{-- Custom javascript --}}
-<script src={{ asset("js/app.js")}} defer></script>
+<script>
+// Script for enabling submit button to be active after declaration
+$('#terms').change(function () {
+  $('#submit').prop("disabled", !this.checked);
+}).change()
+
+// Custom text area script for Medical History Form
+let checker = document.getElementById('qsn1')
+let checker1 = document.getElementById('qsn1a')
+let textInput = document.getElementById('QsnTextarea1')
+
+checker.addEventListener('click', ()=> textInput.disabled = !checker.checked)
+checker1.addEventListener('click', ()=> textInput.disabled = !checker.checked)
+</script>
 
 </body>
 </html>
