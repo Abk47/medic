@@ -67,13 +67,13 @@
               <div class="form-group row">
                  <label for="telephone" class=" col-sm-2 col col-form-label">Telephone</label>
                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Office" name="office">
+                  <input type="text" class="form-control" placeholder="Office" name="office_no">
                  </div>
                  <div class="col">
-                    <input type="text" class="form-control" placeholder="House" name="house">
+                  <input type="text" class="form-control" placeholder="House" name="house_no">
                  </div>
                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Mobile" name="mobile" required>
+                  <input type="text" class="form-control" placeholder="Mobile" name="mobile_no" required>
                  </div>
               </div>
               <div class="form-group row">
