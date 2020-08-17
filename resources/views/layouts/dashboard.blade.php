@@ -171,7 +171,7 @@
   <footer class="main-footer">
     <strong> <a href="https://www.jubileeinsurance.com" style="color: #d92334;">Jubilee Insurance Company of Tanzania.</a></strong>
     <div class="float-right d-none d-sm-inline-block">
-        copyright &copy; 2020
+        2020 &copy; All Rights Reserved.
     </div>
   </footer>
 </div>
