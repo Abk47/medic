@@ -23,7 +23,7 @@ Route::get('/user/dashboard', 'AdminController@index')->name('dashboard');
 
 Route::get('/contacts', 'ContactController@show')->name('contacts');
 
-Route::get('/form1', function () {
+Route::get('/user/forms/membership-form/details', function () {
     return view('forms.info');
 });
 
@@ -40,5 +40,10 @@ Route::get('/form4', function () {
 });
 
 Route::get('/form5', function () {
+    return view('forms.declaration');
+});
+
+// For testing purpose
+Route::get('/user/status', function () {
     return view('forms.declaration');
 });
