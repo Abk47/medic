@@ -114,7 +114,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="# " class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Forms
@@ -128,6 +128,16 @@
               <p>
                 Status
                 <span class="right badge badge-danger">Pending</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                          document.getElementById('logout-form').submit();">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>
+                {{ __('Logout') }}
               </p>
             </a>
           </li>
