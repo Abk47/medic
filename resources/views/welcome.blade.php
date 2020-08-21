@@ -13,7 +13,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: #dc3545;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="welcome">
-                  <img src="{{ asset('media/svg/home.svg') }}" />
+                  <img src="{{ asset('media/svg/Home.svg') }}" height="420px" width="100%"/>
                 </div>
                 <div class="title m-b-md">
                     Jubilee Medical Portal
