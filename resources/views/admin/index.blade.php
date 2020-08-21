@@ -19,7 +19,7 @@
       <div class="content-section">
       <div class="row">
          <div class="col-md-6">
-            <img src={{ asset('media/svg/medical.svg') }} height="212.86px" width="100%">
+            <img src={{ asset('media/svg/medical.svg') }} height="212.86px" width="100%" alt="supporting image">
          </div>
          <div class="col-md-6 mt-4">
             <p><strong>Who is eligible for the cover?</strong><br>

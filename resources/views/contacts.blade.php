@@ -29,7 +29,7 @@
         <div class="col-md-6 mt-3">
              <!--The div element for the map -->
             <div id="map">
-                <img src={{ asset('media/svg/contact.svg') }} height="212.86px" width="100%">
+                <img src={{ asset('media/svg/contact.svg') }} height="212.86px" width="100%" alt="contact us image">
             </div>
         </div>
     </div>
