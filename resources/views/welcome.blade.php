@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="welcome">
-                  <img src="{{ asset('media/svg/Home.svg') }}" height="420px" width="100%" alt="Welcome Page Image"/>
+                  <img src="{{ asset('media/svg/doctor-woman.svg') }}" height="420px" width="100%" alt="Home Page Image"/>
                 </div>
                 <div class="title m-b-md">
                     Jubilee Medical Portal
