@@ -24,6 +24,6 @@ class AdminController extends Controller
     public function index($id)
     {
         $user = User::find($id);
-        return view('admin.index')->with('user',$user);
+        return view('admin.index',compact('user'));
     }
 }
