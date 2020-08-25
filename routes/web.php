@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/user/dashboard', 'AdminController@index')->name('dashboard');
+Route::get('/dashboard/user/{user}', 'AdminController@index')->name('show.dashboard');
 
 Route::get('/contacts', 'ContactController@show')->name('contacts');
 
