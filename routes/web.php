@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/dashboard/user/{user}', 'AdminController@index')->name('show.dashboard');
 
-Route::get('/contacts', 'ContactController@show')->name('contacts');
+Route::get('/contacts', 'ContactController@show')->name('contacts.show');
 
 Route::get('/user/forms/membership-form/details', function () {
     return view('forms.info');

@@ -40,7 +40,7 @@
         <a href={{ url('dashboard/user/'.Auth::user()->id) }} class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href={{ url('contacts') }} class="nav-link">Contact</a>
+        <a href={{ route('contacts.show') }} class="nav-link">Contact</a>
       </li>
     </ul>
 
