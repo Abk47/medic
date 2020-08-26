@@ -27,7 +27,7 @@ Route::get('/user/forms/membership-form/details', function () {
     return view('forms.info');
 });
 
-Route::get('/form2', function () {
+Route::get('/user/forms/membership-form/dependant', function () {
     return view('forms.schedule');
 });
 
