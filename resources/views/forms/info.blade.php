@@ -6,7 +6,7 @@
       <h3 class="card-title">{{ __('MEDICAL INSURANCE MEMBERSHIP APPLICATION FORM') }}</h3>
     </div>
     <div class="content-section p-5">
-        <form method="POST" action="personal_info">
+        <form method="POST" action="member-details">
             @csrf
            <fieldset class="form-group">
               <h2 class="form-heading mb-4" style='color:#b50c2e'>YOUR PERSONAL DETAILS</h2>
