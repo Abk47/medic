@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Member;
 
 class MembersController extends Controller
 {
@@ -10,7 +11,7 @@ class MembersController extends Controller
     public function show(){
         return view('forms.info');
     }
-    
+
     public function save(Request $request){
         $request->validate([
             'company'=>'required',
@@ -25,7 +26,7 @@ class MembersController extends Controller
             'mobile_no'=>'required',
         ]);
 
-        $member = Information::create($request->all());
+        $member = Member::create($request->all());
 
         return redirect('/user/forms/membership-form/dependant');
     }

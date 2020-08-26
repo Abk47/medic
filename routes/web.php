@@ -25,7 +25,7 @@ Route::get('/contacts', 'ContactController@show')->name('contacts');
 
 Route::get('/user/forms/membership-form/details', 'MembersController@show')->name('show.members');
 
-Route::post('member-details', 'MembersController@save')->name('show.members');
+Route::post('/user/forms/membership-form/details-save', 'MembersController@save')->name('show.members');
 
 Route::get('/user/forms/membership-form/dependant', function () {
     return view('forms.schedule');
