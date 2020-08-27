@@ -14,7 +14,6 @@ class CreateMembersTable extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('company');
             $table->string('surname');
@@ -32,6 +31,7 @@ class CreateMembersTable extends Migration
             $table->timestamps();
 
             $table->index('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
