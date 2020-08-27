@@ -39,6 +39,6 @@ class User extends Authenticatable
 
     public function member()
     {
-        return $this->hasOne('App\Member');
+        return $this->hasOne(Member::class);
     }
 }
