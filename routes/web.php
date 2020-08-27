@@ -23,11 +23,11 @@ Route::get('/dashboard/user/{user}', 'AdminController@index')->name('show.dashbo
 
 Route::get('/contacts', 'ContactController@show')->name('contacts.show');
 
-Route::get('/user/forms/membership-form/details', function () {
-    return view('forms.info');
-});
+Route::get('/user/forms/membership-form/details', 'MembersController@show')->name('show.members');
 
-Route::get('/form2', function () {
+Route::post('/user/forms/membership-form/details-save', 'MembersController@save')->name('show.members');
+
+Route::get('/user/forms/membership-form/dependant', function () {
     return view('forms.schedule');
 });
 
