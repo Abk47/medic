@@ -27,18 +27,20 @@
                <th scope="col">Actions</th>
             </tr>
          </thead>
+         @foreach($dependents as $dependant)
          <tbody>
             <tr>
-               <th scope="row"></th>
-               <td></td>
-               <td></td>
-               <td></td>
+               <th scope="row">{{ $dependant->full_name ?? '' }}</th>
+               <td>{{ $dependant->DOB ?? ''}}</td>
+               <td>{{ $dependant->identification ?? ''}}</td>
+               <td>{{ $dependant->relationship ?? ''}}</td>
                <td>
                   <a href="" title="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                   <a href="" title="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                </td>
             </tr>
          </tbody>
+         @endforeach
       </table>
       <div class="container mt-4" style="text-align: center">
          <div class="row" style="display: inline-block">

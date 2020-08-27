@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Dependant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DependantController extends Controller
 {
@@ -14,7 +15,9 @@ class DependantController extends Controller
      */
     public function index()
     {
-        return view('forms.schedule');
+        $id = Auth::id();
+        $dependents = Dependant::where('user_id',$id)->get();
+        return view('forms.schedule',compact('dependents'));
     }
 
     /**
@@ -43,7 +46,9 @@ class DependantController extends Controller
         ]);
 
         auth()->user()->dependants()->create($request->all());
-        return view('forms.schedule');
+    
+        $dependents = Dependant::where('user_id',Auth::id())->get();
+        return view('forms.schedule',compact('dependents'));
     }
 
     /**
