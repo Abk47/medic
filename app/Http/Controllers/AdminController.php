@@ -21,8 +21,10 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function show()
+    public function index($user)
     {
+        $user = User::findOrFail($user);
         return view('admin.index');
     }
+    
 }
