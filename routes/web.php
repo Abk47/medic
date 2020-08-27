@@ -19,7 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard/user/{user}', 'AdminController@index')->name('show.dashboard');
+Route::get('/dashboard/user', 'AdminController@show')->name('show.dashboard');
+
+Route::get('/dashboard/user/{user}', 'AdminController@show')->name('user.dashboard');
 
 Route::get('/contacts', 'ContactController@show')->name('contacts.show');
 
