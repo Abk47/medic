@@ -114,7 +114,7 @@
             </a>
           </li>
           <li class="nav-item {{ (request()->is('user/forms*')) ? 'menu-open': 'null' }}">
-            <a href="/user/forms/membership-form/details" class="nav-link {{ (request()->is('user/forms*')) ? 'active': 'null' }}">
+            <a href="/user/forms/membership-form/details/create" class="nav-link {{ (request()->is('user/forms*')) ? 'active': 'null' }}">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Forms
