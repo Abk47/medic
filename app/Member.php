@@ -22,5 +22,12 @@ class Member extends Model
         'mobile_no',
         'user_email',
         'office_no'
-        ];
+    ];
+
+    protected $primaryKey = 'user_id';
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
