@@ -27,9 +27,9 @@ Route::get('/user/forms/membership-form/details/create', 'MembersController@show
 
 Route::post('/user/forms/membership-form/details/save', 'MembersController@store')->name('save.members');
 
-Route::get('/user/forms/membership-form/dependant', function () {
-    return view('forms.schedule');
-});
+Route::get('/user/forms/membership-form/dependant', 'DependantController@index');
+
+Route::post('/user/forms/membership-form/dependant', 'DependantController@store');
 
 Route::get('/form3', function () {
     return view('forms.history');

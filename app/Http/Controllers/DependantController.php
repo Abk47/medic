@@ -14,7 +14,7 @@ class DependantController extends Controller
      */
     public function index()
     {
-        //
+        return view('forms.schedule');
     }
 
     /**
@@ -35,7 +35,15 @@ class DependantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'full_name'=>'required',
+            'DOB'=>'required',
+            'identification'=>'required',
+            'relationship'=>'required',
+        ]);
+
+        auth()->user()->dependants()->create($request->all());
+        return view('forms.schedule');
     }
 
     /**

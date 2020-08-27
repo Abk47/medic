@@ -54,31 +54,31 @@
                         </button>
                      </div>
                      <div class="modal-body">
-                        <form method="POST" action=''>
+                        <form method="POST" action='/user/forms/membership-form/dependant'>
                            @csrf
                            <!-- Adding fields -->
                            <div class="form-group row mb-3">
                               <label for="fullName" class="col-form-label pl-3">Full Name</label>
                               <div class="col">
-                                 <input type="text" class="form-control" placeholder="Enter full name" id="fullName" required>
+                                 <input type="text"  name='full_name' class="form-control" placeholder="Enter full name" id="fullName" required>
                               </div>
                            </div>
                            <div class="form-group row mb-3">
                               <label for="DOB1" class="col-form-label pl-3">Date of Birth</label>
                               <div class="col">
-                                 <input type="date" class="form-control" id="DOB1" required>
+                                 <input type="date"  name='DOB' class="form-control" id="DOB1" required>
                               </div>
                            </div>
                            <div class="form-group row mb-3">
                               <label for="birth" class="col-form-label pl-3">ID No/ Birth certificate No</label>
                               <div class="col">
-                                 <input type="text" class="form-control" placeholder="" id="birth" required>
+                                 <input type="text"  name='identification' class="form-control" placeholder="" id="birth" required>
                               </div>
                            </div>
                            <div class="form-group row mb-3">
                               <label for="relationship" class="col-form-label pl-3">Relationship to Member</label>
                               <div class="col">
-                                 <select class="custom-select">
+                                 <select class="custom-select" name='relationship'>
                                     <option selected>Choose relationship</option>
                                     <option value="Father">Father</option>
                                     <option value="Mother">Mother</option>
@@ -90,11 +90,11 @@
                                  </select>
                               </div>
                            </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-danger">Save</button>
+                           </div>
                         </form>
-                     </div>
-                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-danger">Save</button>
                      </div>
                   </div>
                </div>
