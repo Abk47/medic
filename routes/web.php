@@ -19,15 +19,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard/user', 'AdminController@show')->name('show.dashboard');
-
-Route::get('/dashboard/user/{user}', 'AdminController@show')->name('user.dashboard');
+Route::get('/dashboard/user/{user}', 'AdminController@index')->name('index.dashboard');
 
 Route::get('/contacts', 'ContactController@show')->name('contacts.show');
 
-Route::get('/user/forms/membership-form/details', 'MembersController@show')->name('show.members');
+Route::get('/user/forms/membership-form/details/create', 'MembersController@show')->name('show.members');
 
-Route::post('/user/forms/membership-form/details-save', 'MembersController@save')->name('show.members');
+Route::post('/user/forms/membership-form/details/store', 'MembersController@save')->name('show.members');
 
 Route::get('/user/forms/membership-form/dependant', function () {
     return view('forms.schedule');
