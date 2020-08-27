@@ -12,7 +12,7 @@ class MembersController extends Controller
         return view('forms.info');
     }
 
-    public function save(Request $request){
+    public function store(Request $request){
         $request->validate([
             'company'=>'required',
             'surname'=>'required',
@@ -25,9 +25,9 @@ class MembersController extends Controller
             'occupation'=>'required',
             'mobile_no'=>'required',
         ]);
-
-        $member = Member::create($request->all());
-
+        
+        auth()->user()->member()->create($request->all());
+        
         return redirect('/user/forms/membership-form/dependant');
     }
 }
