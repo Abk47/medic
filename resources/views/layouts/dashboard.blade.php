@@ -105,8 +105,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item {{ (request()->is('user/dashboard')) ? 'menu-open': 'null' }}">
-            <a href="/user/dashboard" class="nav-link {{ (request()->is('user/dashboard')) ? 'active': 'null' }}">
+          <li class="nav-item {{ (request()->is('/dashboard/user*')) ? 'menu-open': 'null' }}">
+            <a href={{ url('dashboard/user/'.Auth::user()->id) }} class="nav-link {{ (request()->is('dashboard/user*')) ? 'active': 'null' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard

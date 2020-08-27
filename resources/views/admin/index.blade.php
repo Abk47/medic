@@ -5,7 +5,7 @@
 <div class="content-section ">
 <!-- Jumbotron -->
 <div class="jumbotron dashboard-jumbo">
-    <h1 class="h2" style="font-weight: bold;">Welcome {{ ucfirst($user->name) }} to Jubilee Insurance Medical Portal</h1>
+    <h1 class="h2" style="font-weight: bold;">Welcome {{ ucfirst(Auth::user()->name) }} to Jubilee Insurance Medical Portal</h1>
     <p class="lead">This is a simple portal that you can use for your medical insurance application or cessation.</p>
  </div> <!-- /.end-jumbotron -->
 
