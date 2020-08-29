@@ -1,5 +1,11 @@
 @extends('layouts.dashboard')
 @section('content')
+
+@if(session('status'))
+   <div class="alert alert-success">
+      {{ session('status') }}
+   </div>
+@endif
 <div class="card card-danger">
    <div class="card-header">
       <h3 class="card-title">{{ __('MEDICAL INSURANCE MEMBERSHIP APPLICATION FORM') }}</h3>
@@ -35,7 +41,7 @@
                <td>{{ $dependant->identification ?? ''}}</td>
                <td>{{ $dependant->relationship ?? ''}}</td>
                <td>
-                  <form action="" method="POST">
+                  <form action="{{ route('dependant.destroy', $dependant->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger" title='DELETE' type="submit"><i class="far fa-trash-alt"></i></button>

@@ -9,28 +9,6 @@ use Illuminate\Support\Facades\Auth;
 class DependantController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $id = Auth::id();
-        $dependents = Dependant::where('user_id',$id)->get();
-        return view('forms.schedule',compact('dependents'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -59,30 +37,9 @@ class DependantController extends Controller
      */
     public function show(Dependant $dependant)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Dependant  $dependant
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Dependant $dependant)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Dependant  $dependant
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Dependant $dependant)
-    {
-        //
+        $id = Auth::id();
+        $dependents = Dependant::where('user_id',$id)->get();
+        return view('forms.schedule',compact('dependents'));
     }
 
     /**
@@ -91,8 +48,16 @@ class DependantController extends Controller
      * @param  \App\Dependant  $dependant
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dependant $dependant)
+    public function destroy($id)
     {
-        //
+        // $member= Dependant::find($dependant);
+        $user_id = auth()->user()->id;
+        $dependents= Dependant::findOrFail($id);
+        if($dependents && $dependents->user_id){
+            $dependents->delete();
+            return redirect()->route('dependant.index')->with('status','Dependant successfully deleted!');
+        } else{
+            abort(404);
+        }
     }
 }
