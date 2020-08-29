@@ -29,7 +29,7 @@
          </thead>
          @foreach($dependents as $dependant)
          <tbody>
-            <tr>
+            <tr style="text-align:center">
                <th scope="row">{{ $dependant->full_name ?? '' }}</th>
                <td>{{ $dependant->DOB ?? ''}}</td>
                <td>{{ $dependant->identification ?? ''}}</td>
