@@ -35,9 +35,12 @@
                <td>{{ $dependant->identification ?? ''}}</td>
                <td>{{ $dependant->relationship ?? ''}}</td>
                <td>
-                  <a href="" title="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                  <a href="" title="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-               </td>
+                  <form action="" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger" title='DELETE' type="submit"><i class="fas fa-times"></i></button>
+                  </form>
+              </td>
             </tr>
          </tbody>
          @endforeach
