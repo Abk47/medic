@@ -26,7 +26,7 @@ class DependantController extends Controller
         auth()->user()->dependants()->create($request->all());
     
         $dependents = Dependant::where('user_id',Auth::id())->get();
-        return view('forms.schedule',compact('dependents'));
+        return view('forms.dependents',compact('dependents'));
     }
 
     /**
@@ -39,7 +39,7 @@ class DependantController extends Controller
     {
         $id = Auth::id();
         $dependents = Dependant::where('user_id',$id)->get();
-        return view('forms.schedule',compact('dependents'));
+        return view('forms.dependents',compact('dependents'));
     }
 
     /**
@@ -55,7 +55,7 @@ class DependantController extends Controller
         $dependents= Dependant::findOrFail($id);
         if($dependents && $dependents->user_id){
             $dependents->delete();
-            return redirect()->route('dependant.index')->with('status','Dependant successfully deleted!');
+            return redirect()->route('dependant.show')->with('status','Dependant successfully deleted!');
         } else{
             abort(404);
         }

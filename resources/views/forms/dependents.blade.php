@@ -71,26 +71,26 @@
                            <div class="form-group row mb-3">
                               <label for="fullName" class="col-form-label pl-3">Full Name</label>
                               <div class="col">
-                                 <input type="text"  name='full_name' class="form-control" placeholder="Enter full name" id="fullName" required>
+                                 <input type="text" autocomplete="off" name='full_name' class="form-control" placeholder="Enter full name" id="fullName" required>
                               </div>
                            </div>
                            <div class="form-group row mb-3">
                               <label for="DOB1" class="col-form-label pl-3">Date of Birth</label>
                               <div class="col">
-                                 <input type="date"  name='DOB' class="form-control" id="DOB1" required>
+                                 <input type="date" autocomplete="off" name='DOB' class="form-control" id="DOB1" required>
                               </div>
                            </div>
                            <div class="form-group row mb-3">
                               <label for="birth" class="col-form-label pl-3">ID No/ Birth certificate No</label>
                               <div class="col">
-                                 <input type="text"  name='identification' class="form-control" placeholder="" id="birth" required>
+                                 <input type="text" autocomplete="off" name='identification' class="form-control" placeholder="" id="birth" required>
                               </div>
                            </div>
                            <div class="form-group row mb-3">
                               <label for="relationship" class="col-form-label pl-3">Relationship to Member</label>
                               <div class="col">
                                  <select class="custom-select" name='relationship'>
-                                    <option selected>Choose relationship</option>
+                                    <option selected disabled>Choose a relationship</option>
                                     <option value="Father">Father</option>
                                     <option value="Mother">Mother</option>
                                     <option value="Son">Son</option>
