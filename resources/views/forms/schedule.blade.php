@@ -21,7 +21,7 @@
          <thead class="thead-dark">
             <tr style="text-align:center">
                <th scope="col" >Names in Full</th>
-               <th scope="col">Date of Birth <br> (DD/MM/YY)</th>
+               <th scope="col">Date of Birth <br> (DD/MM/YYYY)</th>
                <th scope="col">Identity Card number/ <br>Birth Certificate number</th>
                <th scope="col">Relationship to Member</th>
                <th scope="col">Actions</th>
@@ -31,14 +31,14 @@
          <tbody>
             <tr style="text-align:center">
                <th scope="row">{{ $dependant->full_name ?? '' }}</th>
-               <td>{{ $dependant->DOB ?? ''}}</td>
+               <td>{{ date("d-m-Y", strtotime($dependant->DOB)) ?? ''}}</td>
                <td>{{ $dependant->identification ?? ''}}</td>
                <td>{{ $dependant->relationship ?? ''}}</td>
                <td>
                   <form action="" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-danger" title='DELETE' type="submit"><i class="fas fa-times"></i></button>
+                    <button class="btn btn-danger" title='DELETE' type="submit"><i class="far fa-trash-alt"></i></button>
                   </form>
               </td>
             </tr>
