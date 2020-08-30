@@ -110,8 +110,8 @@
                   </div>
                </div>
             </div>
-            <button type='submit' class='btn btn-danger'>Previous Page</button>
-            <button type='submit' class='btn btn-outline-danger'>Next Page  <i class="fas fa-arrow-right"></i></button>
+            <a href="{{ route('members.edit') }}" role='button' class='btn btn-danger'>Previous Page</a>
+            <a href="" role='button' class='btn btn-outline-danger'>Next Page  <i class="fas fa-arrow-right"></i></a>
          </div>
       </div>
    </div>

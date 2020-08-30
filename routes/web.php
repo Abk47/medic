@@ -27,6 +27,10 @@ Route::get('/user/forms/membership-form/details/create', 'MembersController@show
 
 Route::post('/user/forms/membership-form/details/save', 'MembersController@store')->name('save.members');
 
+Route::get('/user/forms/membership-form/details/edit', 'MembersController@edit')->name('members.edit');
+
+Route::patch('/user/forms/membership-form/details/{id}', 'MembersController@update')->name('members.update');
+
 Route::get('/user/forms/membership-form/dependant', 'DependantController@show')->name('dependant.show');
 
 Route::post('/user/forms/membership-form/dependant', 'DependantController@store');
@@ -47,5 +51,5 @@ Route::get('/form5', function () {
 
 // For testing purpose
 Route::get('/user/status', function () {
-    return view('forms.declaration');
+    return redirect()->route('named_route', ['parameterKey' => 'value']);;
 });
