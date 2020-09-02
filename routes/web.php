@@ -33,13 +33,13 @@ Route::patch('/user/forms/membership-form/details/{id}', 'MembersController@upda
 
 Route::get('/user/forms/membership-form/dependant', 'DependantController@show')->name('dependant.show');
 
-Route::post('/user/forms/membership-form/dependant', 'DependantController@store');
+Route::post('/user/forms/membership-form/dependant', 'DependantController@store')->name('dependant.store');
 
 Route::delete('/user/forms/membership-form/dependant/{id}', 'DependantController@destroy')->name('dependant.destroy');
 
-Route::get('/form3', function () {
-    return view('forms.history');
-});
+Route::get('/user/forms/membership-form/medical-history', 'HistoryController@show')->name('history.show');
+
+Route::post('/user/forms/membership-form/medical-history', 'HistoryController@store')->name('history.store');
 
 Route::get('/form4', function () {
     return view('forms.details');

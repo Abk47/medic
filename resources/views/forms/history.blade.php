@@ -6,7 +6,7 @@
       <h3 class="card-title">{{ __('MEDICAL INSURANCE MEMBERSHIP APPLICATION FORM') }}</h3>
     </div>
     <div class="content-section p-5">
-      <form method="POST" action="">
+      <form method="POST" action="{{ route('history.store') }}">
          @csrf
          <fieldset class="form-group">
             <h2 class="form-heading mb-4" style='color:#b50c2e'>CONFIDENTIAL MEDICAL HISTORY</h2>
@@ -25,18 +25,18 @@
                      </legend>
                      <div class="col-sm-2">
                         <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn1" name="qsn1" value="yes"/>
+                           <input type="radio" id="qsn1" name="Qsn1" value="yes" required/>
                            <label for="qsn1">Yes</label>
                        </div>
                        <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn1a" name="qsn1" value="no"/>
+                           <input type="radio" id="qsn1a" name="Qsn1" value="no"/>
                            <label for="qsn1a">No</label>
                        </div>
                      </div>
                   </div>
                   <div class="form-group ">
                      <label for="QsnTextarea1">If Yes, please state name of insurers and policy numbers</label>
-                     <textarea class="form-control" id="QsnTextarea1" name='QsnTextarea1' rows="2" disabled></textarea>
+                     <textarea class="form-control" id="QsnTextarea1" name='Insurer & Policy No' rows="2" disabled></textarea>
                   </div>
                </li>
                <li>
@@ -47,11 +47,11 @@
                      </legend>
                      <div class="col-sm-2">
                         <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn2" name="qsn2" value="yes"/>
+                           <input type="radio" id="qsn2" name="Qsn2" value="yes" required/>
                            <label for="qsn2">Yes</label>
                        </div>
                        <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn2a" name="qsn2" value="no"/>
+                           <input type="radio" id="qsn2a" name="Qsn2" value="no"/>
                            <label for="qsn2a">No</label>
                        </div>
                      </div>
@@ -66,11 +66,11 @@
                      </legend>
                      <div class="col-sm-2">
                         <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn3" name="qsn3" value="yes"/>
+                           <input type="radio" id="qsn3" name="Qsn3" value="yes" required/>
                            <label for="qsn3">Yes</label>
                        </div>
                        <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn3a" name="qsn3" value="no"/>
+                           <input type="radio" id="qsn3a" name="Qsn3" value="no"/>
                            <label for="qsn3a">No</label>
                        </div>
                      </div>
@@ -85,11 +85,11 @@
                      </legend>
                      <div class="col-sm-2">
                         <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn4" name="qsn4" value="yes"/>
+                           <input type="radio" id="qsn4" name="Qsn4" value="yes" required/>
                            <label for="qsn4">Yes</label>
                        </div>
                        <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn4a" name="qsn4" value="no"/>
+                           <input type="radio" id="qsn4a" name="Qsn4" value="no"/>
                            <label for="qsn4a">No</label>
                        </div>
                      </div>
@@ -104,11 +104,11 @@
                      </legend>
                      <div class="col-sm-2">
                         <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn5" name="qsn5" value="yes"/>
+                           <input type="radio" id="qsn5" name="Qsn5" value="yes" required/>
                            <label for="qsn5">Yes</label>
                        </div>
                        <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn5a" name="qsn5" value="no"/>
+                           <input type="radio" id="qsn5a" name="Qsn5" value="no"/>
                            <label for="qsn5a">No</label>
                        </div>
                      </div>
@@ -123,11 +123,11 @@
                      </legend>
                      <div class="col-sm-2">
                         <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn6" name="qsn6" value="yes"/>
+                           <input type="radio" id="qsn6" name="Qsn6" value="yes" required/>
                            <label for="qsn6">Yes</label>
                        </div>
                        <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn6a" name="qsn6" value="no"/>
+                           <input type="radio" id="qsn6a" name="Qsn6" value="no"/>
                            <label for="qsn6a">No</label>
                        </div>
                      </div>
@@ -142,11 +142,11 @@
                      </legend>
                      <div class="col-sm-2">
                         <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn7" name="qsn7" value="yes"/>
+                           <input type="radio" id="qsn7" name="Qsn7" value="yes" required/>
                            <label for="qsn7">Yes</label>
                        </div>
                        <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn7a" name="qsn7" value="no"/>
+                           <input type="radio" id="qsn7a" name="Qsn7" value="no"/>
                            <label for="qsn7a">No</label>
                        </div>
                      </div>
@@ -160,11 +160,11 @@
                      </legend>
                      <div class="col-sm-2">
                         <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn8" name="qsn8" value="yes"/>
+                           <input type="radio" id="qsn8" name="Qsn8" value="yes" required/>
                            <label for="qsn8">Yes</label>
                        </div>
                        <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn8a" name="qsn8" value="no"/>
+                           <input type="radio" id="qsn8a" name="Qsn8" value="no"/>
                            <label for="qsn8a">No</label>
                        </div>
                      </div>
@@ -178,11 +178,11 @@
                      </legend>
                      <div class="col-sm-2">
                         <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn9" name="qsn9" value="yes"/>
+                           <input type="radio" id="qsn9" name="Qsn9" value="yes" required/>
                            <label for="qsn9">Yes</label>
                        </div>
                        <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn9a" name="qsn9" value="no"/>
+                           <input type="radio" id="qsn9a" name="Qsn9" value="no"/>
                            <label for="qsn9a">No</label>
                        </div>
                      </div>
@@ -193,7 +193,7 @@
                      Please state the name and address of your medical doctor/physician or hospital
                      </strong>
                      </label>
-                     <textarea class="form-control" id="QsnTextarea1" rows="3" required></textarea>
+                     <textarea class="form-control" name="DoctorName" id="QsnTextarea1" rows="3" required></textarea>
                   </div>
                </li>
             </ol>
