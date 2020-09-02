@@ -2,9 +2,12 @@
 @section('content')
 
 @if(session('status'))
-   <div class="alert alert-success">
-      {{ session('status') }}
-   </div>
+<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+   {{ session('status') }}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
 @endif
 <div class="card card-danger">
    <div class="card-header">
@@ -111,7 +114,7 @@
                </div>
             </div>
             <a href="{{ route('members.edit') }}" role='button' class='btn btn-danger'>Previous Page</a>
-            <a href="" role='button' class='btn btn-outline-danger'>Next Page  <i class="fas fa-arrow-right"></i></a>
+            <a href="{{ route('history.show') }}" role='button' class='btn btn-outline-danger'>Next Page  <i class="fas fa-arrow-right"></i></a>
          </div>
       </div>
    </div>
