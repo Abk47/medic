@@ -199,7 +199,7 @@
             </ol>
          </fieldset>
          <div class="form-group" style="text-align: center">
-            <button type='submit' class='btn btn-danger'>Previous Page</button>
+            <a href="{{ route('dependant.show') }}" role='button' class='btn btn-danger'>Previous Page</a>
             <button type='submit' class='btn btn-outline-danger'>Next Page  <i class="fas fa-arrow-right"></i></button>
          </div>
       </form>
