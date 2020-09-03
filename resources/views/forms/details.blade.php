@@ -22,11 +22,11 @@
       <table class="table table-bordered">
          <caption>The information provided will not be shared with anyone.</caption>
          <thead class="thead-dark">
-            <tr style="text-align: center;">
-               <th scope="col">Name and relationship</th>
+            <tr style="text-align: center; font-size:15px; ">
+               <th scope="col">Name and relationship to the applicant</th>
                <th scope="col">Relevant Question</th>
                <th scope="col">Treatment and consultations received <br> (with date)</th>
-               <th scope="col">Name of the treating doctor/hospital <br>and their telephone number/address</th>
+               <th scope="col">Name of the treating doctor or hospital <br>and their telephone number or address</th>
                <th scope="col">Needs for future treatment <br> or consultation</th>
                <th scope="col">Actions</th>
             </tr>
