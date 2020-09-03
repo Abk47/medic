@@ -9,7 +9,13 @@ class MembersController extends Controller
 {
 
     public function show(){
-        return view('forms.info');
+        $user_id = auth()->user()->id;
+        $member = Member::find($user_id);
+        if(isset($member)){
+        return view('forms.infoEdit',compact('member'));
+        } else {
+            return view('forms.info');
+        }
     }
 
     public function store(Request $request){
