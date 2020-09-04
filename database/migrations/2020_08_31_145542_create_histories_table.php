@@ -16,7 +16,7 @@ class CreateHistoriesTable extends Migration
         Schema::create('histories', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedBigInteger('user_id');
-            $table->longText('Insurer & Policy No')->nullable();
+            $table->longText('Insurer')->nullable();
             $table->string('Qsn1');
             $table->string('Qsn2');
             $table->string('Qsn3');

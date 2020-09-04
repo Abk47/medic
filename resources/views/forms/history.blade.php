@@ -36,7 +36,7 @@
                   </div>
                   <div class="form-group ">
                      <label for="QsnTextarea1">If Yes, please state name of insurers and policy numbers</label>
-                     <textarea class="form-control" id="QsnTextarea1" name='Insurer & Policy No' rows="2" disabled></textarea>
+                     <textarea class="form-control" id="QsnTextarea1" name='Insurer' rows="2" disabled></textarea>
                   </div>
                </li>
                <li>
@@ -47,11 +47,11 @@
                      </legend>
                      <div class="col-sm-2">
                         <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn2" name="Qsn2" value="yes" required/>
+                           <input type="radio" id="qsn2" name="Qsn2" value="yes"  required/>
                            <label for="qsn2">Yes</label>
                        </div>
                        <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn2a" name="Qsn2" value="no"/>
+                           <input type="radio" id="qsn2a" name="Qsn2" value="no" />
                            <label for="qsn2a">No</label>
                        </div>
                      </div>
@@ -70,7 +70,7 @@
                            <label for="qsn3">Yes</label>
                        </div>
                        <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn3a" name="Qsn3" value="no"/>
+                           <input type="radio" id="qsn3a" name="Qsn3" value="no" />
                            <label for="qsn3a">No</label>
                        </div>
                      </div>
@@ -89,7 +89,7 @@
                            <label for="qsn4">Yes</label>
                        </div>
                        <div class="icheck-danger icheck-inline">
-                           <input type="radio" id="qsn4a" name="Qsn4" value="no"/>
+                           <input type="radio" id="qsn4a" name="Qsn4" value="no" />
                            <label for="qsn4a">No</label>
                        </div>
                      </div>
@@ -98,9 +98,9 @@
                <li>
                   <div class="row mb-2">
                      <legend class="col-form-label col-sm-10 pt-0">
-                        Have you or any member of your family proposed for this insurance suffered from any 
-                        complaint which may necessitate a surgical operation or for which you reasonably 
-                        anticipate the necessity of treatment?                                
+                        Have you or any member of your family proposed for this 
+                        complaint which may necessitate a surgical operation or 
+                        anticipate the necessity of treatment?                  
                      </legend>
                      <div class="col-sm-2">
                         <div class="icheck-danger icheck-inline">
