@@ -7,6 +7,10 @@ use App\Member;
 
 class MembersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function show(){
         $user_id = auth()->user()->id;

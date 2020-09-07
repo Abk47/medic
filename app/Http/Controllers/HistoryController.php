@@ -7,6 +7,11 @@ use App\History;
 
 class HistoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function show(){
         $history = History::find(auth()->user()->id);
         if(empty($history)){
@@ -46,7 +51,7 @@ class HistoryController extends Controller
         // If a user chooses any YES option, redirected to a different page 
             if($input1 == 'yes' || $input2 == 'yes' || $input3 == 'yes' || $input4 == 'yes' || $input5 == 'yes' || $input6 == 'yes' || $input7 == 'yes' || $input8 == 'yes' || $input == 'yes')
             {
-                return redirect('/form4');
+                return redirect()->route('confidential.show');
             }
             return redirect('/form5');
         } 
@@ -85,7 +90,7 @@ class HistoryController extends Controller
             // If a user chooses any YES option, redirected to a different page 
             if($input1 == 'yes' || $input2 == 'yes' || $input3 == 'yes' || $input4 == 'yes' || $input5 == 'yes' || $input6 == 'yes' || $input7 == 'yes' || $input8 == 'yes' || $input == 'yes')
                 {
-                    return redirect('/form4');
+                    return redirect()->route('confidential.show');
                 }
                 return redirect('/form5');
         } else{
