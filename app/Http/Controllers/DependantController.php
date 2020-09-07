@@ -28,9 +28,7 @@ class DependantController extends Controller
         ]);
 
         auth()->user()->dependants()->create($request->all());
-    
-        $dependents = Dependant::where('user_id',Auth::id())->get();
-        return view('forms.dependents',compact('dependents'));
+        return redirect()->route('dependant.show');
     }
 
     /**
