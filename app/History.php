@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class History extends Model
 {
     protected $fillable = [
-        'Insurer & Policy No',
+        'Insurer',
         'Qsn1',
         'Qsn2',
         'Qsn3',

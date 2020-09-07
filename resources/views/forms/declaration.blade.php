@@ -24,7 +24,7 @@
          <label for="terms"> I hereby acknowledge and agree to the above statement</label>
      </div>
       <div class="form-group mt-4" style="text-align: center">
-         <button type='submit' class='btn btn-danger'>Previous Page</button>
+         <a href="{{ url()->previous() }}" role="button" class='btn btn-danger'>Previous Page</a>
          <button type='submit' id='submit' class='btn btn-outline-info' disabled>Submit</button>
       </div>
    </div>
