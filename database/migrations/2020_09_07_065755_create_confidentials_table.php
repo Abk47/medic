@@ -14,8 +14,18 @@ class CreateConfidentialsTable extends Migration
     public function up()
     {
         Schema::create('confidentials', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id')->unsigned();
+            $table->unsignedBigInteger('user_id');
+            $table->longText('NameRelation');
+            $table->integer('QsnID');
+            $table->longText('Medical'); 
+            $table->longText('Treatment'); 
+            $table->longText('DoctorsInfo');
+            $table->longText('FutureTreatment');
             $table->timestamps();
+
+            $table->index('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

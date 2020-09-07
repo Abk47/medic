@@ -23,26 +23,33 @@
          <caption>The information provided will not be shared with anyone.</caption>
          <thead class="thead-dark">
             <tr style="text-align: center; font-size:15px; ">
-               <th scope="col">Name and relationship to the applicant</th>
-               <th scope="col">Relevant Question</th>
-               <th scope="col">Treatment and consultations received <br> (with date)</th>
-               <th scope="col">Name of the treating doctor or hospital <br>and their telephone number or address</th>
-               <th scope="col">Needs for future treatment <br> or consultation</th>
-               <th scope="col">Actions</th>
+               <th scope="col" style="width: 18%">Name and relationship to the applicant</th>
+               <th scope="col" style="width: 2%">Relevant Question</th>
+               <th scope="col" style="width: 20%">Medical condition</th>
+               <th scope="col" style="width: 21%">Treatment and consultations received <br> (with date)</th>
+               <th scope="col" style="width: 18%">Name of the treating doctor or hospital <br>and their telephone number or address</th>
+               <th scope="col" style="width: 17%">Needs for future treatment <br> or consultation</th>
+               <th scope="col" style="width: 4%">Actions</th>
             </tr>
          </thead>
          <tbody>
-            <tr>
-               <th scope="row"></th>
-               <td></td>
-               <td></td>
-               <td></td>
-               <td></td>
+            @foreach($medicals as $medical)
+            <tr style="text-align:center">
+               <th scope="row">{{ $medical->NameRelation ?? '' }}</th>
+               <td>{{ $medical->QsnID ?? '' }}</td>
+               <td>{{ $medical->Medical ?? '' }}</td>
+               <td>{{ $medical->Treatment ?? '' }}</td>
+               <td>{{ $medical->DoctorsInfo ?? '' }}</td>             
+               <td>{{ $medical->FutureTreatment ?? '' }}</td>             
                <td>
-                  <a href="" title="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                  <a href="" title="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                  <form action="" method="POST">
+                     @csrf
+                     @method('DELETE')
+                     <button class="btn btn-danger" title='DELETE' type="submit"><i class="far fa-trash-alt"></i></button>
+                   </form>
                </td>
             </tr>
+            @endforeach
          </tbody>
       </table>
       <div class="container mt-4" style="text-align: center">
@@ -63,19 +70,19 @@
                         </button>
                      </div>
                      <div class="modal-body">
-                        <form method="POST" action=''>
+                        <form method="POST" action='{{ route('confidential.save') }}'>
                            @csrf
                            <!-- Adding fields -->
                            <div class="form-group">
-                              <label for="relation" class="col-form-label pl-3">Name and relationship to the applicant</label>
+                              <label for="NameRelation" class="col-form-label pl-3">Name and relationship to the applicant</label>
                               <div class="col">
-                                 <input type="text" class="form-control"  id="relation" required>
+                                 <input type="text" class="form-control" autoComplete='off' name="NameRelation" id="NameRelation" required>
                               </div>
                            </div>
                            <div class="form-group">
                               <label for="question" class="col-form-label pl-3">Relevant question</label>
                               <div class="col">
-                                 <select class="custom-select">
+                                 <select class="custom-select" name="QsnID">
                                     <option selected disabled>Choose a number</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -92,38 +99,38 @@
                            <div class="form-group">
                               <label for="medical" class="col-form-label pl-3">Medical condition</label>
                               <div class="col">
-                                 <input type="text" class="form-control"  id="medical" required>
+                                 <input type="text" class="form-control" autoComplete='off' name="Medical" required>
                               </div>
                            </div>
                            <div class="form-group">
-                              <label for="consult" class="col-form-label pl-3">Treatment and consultations received</label>
+                              <label for="Treatment" class="col-form-label pl-3">Treatment and consultations received</label>
                               <div class="col">
-                                 <input type="text" class="form-control"  id="consult" required>
+                                 <input type="text" class="form-control" autoComplete='off' name="Treatment" required>
                               </div>
                            </div>
                            <div class="form-group">
-                              <label for="doctor" class="col-form-label pl-3">Name of the treating doctor or hospital and their telephone number or address</label>
+                              <label for="DoctorsInfo" class="col-form-label pl-3">Name of the treating doctor or hospital and their telephone number or address</label>
                               <div class="col">
-                                 <input type="text" class="form-control"  id="doctor" required>
+                                 <input type="text" class="form-control" autocomplete='off' name="DoctorsInfo" required>
                               </div>
                            </div>
                            <div class="form-group">
-                              <label for="needs" class="col-form-label pl-3">Needs for future treatment or consultation</label>
+                              <label for="FutureTreatment" class="col-form-label pl-3">Needs for future treatment or consultation</label>
                               <div class="col">
-                                 <input type="text" class="form-control" id="needs" required>
+                                 <input type="text" class="form-control" autocomplete='off' name="FutureTreatment" required>
                               </div>
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-danger">Save</button>
                            </div>
                         </form>
-                     </div>
-                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-danger">Save</button>
                      </div>
                   </div>
                </div>
             </div>
-            <button type='submit' class='btn btn-danger'>Previous Page</button>
-            <button type='submit' class='btn btn-outline-danger'>Next Page <i class="fas fa-arrow-right"></i></button>
+            <a href="{{ url()->previous() }}" role='button' class='btn btn-danger'>Previous Page</a>
+            <a href="/user/forms/membership-form/declaration" role='button' class='btn btn-outline-danger'>Next Page  <i class="fas fa-arrow-right"></i></a>
          </div>
       </div>
    </div>
