@@ -43,9 +43,7 @@ Route::post('/user/forms/membership-form/medical-history', 'HistoryController@st
 
 Route::patch('/user/forms/membership-form/medical-history', 'HistoryController@update')->name('history.update');
 
-Route::get('/form4', function () {
-    return view('forms.details');
-});
+Route::get('/user/forms/membership-form/confidential-medical-history','ConfidentialController@show')->name('confidential.show');
 
 Route::get('/form5', function () {
     return view('forms.declaration');
