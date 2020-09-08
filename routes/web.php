@@ -47,6 +47,8 @@ Route::get('/user/forms/membership-form/confidential-medical-history','Confident
 
 Route::post('/user/forms/membership-form/confidential-medical-history/save','ConfidentialController@store')->name('confidential.save');
 
+Route::delete('/user/forms/membership-form/confidential-medical-history/{id}','ConfidentialController@destroy')->name('confidential.destroy');
+
 Route::get('/user/forms/membership-form/declaration', function () {
     return view('forms.declaration');
 });
