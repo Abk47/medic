@@ -42,7 +42,7 @@
                <td>{{ $medical->DoctorsInfo ?? '' }}</td>             
                <td>{{ $medical->FutureTreatment ?? '' }}</td>             
                <td>
-                  <form action="" method="POST">
+                  <form action="{{ route('confidential.destroy', $medical->id) }}" method="POST">
                      @csrf
                      @method('DELETE')
                      <button class="btn btn-danger" title='DELETE' type="submit"><i class="far fa-trash-alt"></i></button>
@@ -129,7 +129,7 @@
                   </div>
                </div>
             </div>
-            <a href="{{ url()->previous() }}" role='button' class='btn btn-danger'>Previous Page</a>
+            <a href="{{ route('history.show') }}" role='button' class='btn btn-danger'>Previous Page</a>
             <a href="/user/forms/membership-form/declaration" role='button' class='btn btn-outline-danger'>Next Page  <i class="fas fa-arrow-right"></i></a>
          </div>
       </div>
