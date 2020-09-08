@@ -32,4 +32,17 @@ class ConfidentialController extends Controller
         auth()->user()->confidentials()->create($request->all());
         return redirect()->route('confidential.show');
     }
+
+    public function destroy($id)
+    {
+        $user_id = auth()->user()->id;
+        $dependents= Confidential::findOrFail($id);
+        if($dependents && $dependents->user_id){
+            $dependents->delete();
+            return redirect()->route('confidential.show')->with('status','Medical History successfully deleted!');
+        } else{
+            abort(404);
+        }
+    }
 }
+
