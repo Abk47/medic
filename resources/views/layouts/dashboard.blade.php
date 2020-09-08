@@ -203,14 +203,6 @@
 $('#terms').change(function () {
   $('#submit').prop("disabled", !this.checked);
 }).change()
-
-// Custom text area script for Medical History Form
-let checker = document.getElementById('qsn1')
-let checker1 = document.getElementById('qsn1a')
-let textInput = document.getElementById('QsnTextarea1')
-
-checker.addEventListener('click', ()=> textInput.disabled = !checker.checked)
-checker1.addEventListener('click', ()=> textInput.disabled = !checker.checked)
 </script>
 
 </body>
