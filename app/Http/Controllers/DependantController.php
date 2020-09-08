@@ -52,7 +52,6 @@ class DependantController extends Controller
      */
     public function destroy($id)
     {
-        // $member= Dependant::find($dependant);
         $user_id = auth()->user()->id;
         $dependents= Dependant::findOrFail($id);
         if($dependents && $dependents->user_id){
