@@ -92,7 +92,7 @@ class HistoryController extends Controller
                 {
                     return redirect()->route('confidential.show');
                 }
-                return redirect('/form5');
+                return redirect()->route('agreement.show');
         } else{
             abort(404);
         }
