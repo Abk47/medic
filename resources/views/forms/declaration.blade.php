@@ -7,7 +7,7 @@
    <div class="content-section p-4">
       <h2 class="form-heading" style='color:#b50c2e'>DECLARATION OF MAIN MEMBER</h2>
       <div class="card bg-light mb-3">
-         <div class="card-body">
+         <div class="card-body m-2">
             I, on behalf of myself and the members of my family proposed for insurance, 
             hereby declare that I have not withheld or misstated any particular material fact. 
             I understand that any misstatement or non disclosure of any material information
