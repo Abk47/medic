@@ -25,6 +25,9 @@
 <!-- Theme style -->
 <link rel="stylesheet" href={{ asset("dist/css/adminlte.min.css") }}>
 
+{{-- Add toastr plugin  --}}
+<link rel="stylesheet" href={{ asset("plugins/toastr/toastr.min.css") }}/>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper" id="app">
@@ -210,6 +213,8 @@
 <script src={{ asset("plugins/bootstrap/js/bootstrap.bundle.min.js")}}></script>
 <!-- AdminLTE App -->
 <script src={{ asset("dist/js/adminlte.min.js")}}></script>
+{{-- Toastr Script  --}}
+<script src={{ asset("plugins/toastr/toastr.min.js") }}></script>
 
 {{-- Custom javascript --}}
 <script>
