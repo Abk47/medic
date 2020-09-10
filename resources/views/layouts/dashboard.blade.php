@@ -114,13 +114,27 @@
             </a>
           </li>
           <li class="nav-item {{ (request()->is('user/forms*')) ? 'menu-open': 'null' }}">
-            <a href="/user/forms/membership-form/details/create" class="nav-link {{ (request()->is('user/forms*')) ? 'active': 'null' }}">
+            <a href="#" class="nav-link {{ (request()->is('user/forms*')) ? 'active': 'null' }}">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Forms
-                <span class="badge badge-info right">3</span>
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/user/forms/membership-form/details/create" class="nav-link {{ (request()->is('user/forms/membership-form*')) ? 'active': 'null' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Membership Form</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Member Cessations Form</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item {{ (request()->is('user/status*')) ? 'menu-open': 'null' }}">
             <a href="/user/status" class="nav-link {{ (request()->is('user/status')) ? 'active': 'null' }}">
