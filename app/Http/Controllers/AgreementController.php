@@ -15,4 +15,9 @@ class AgreementController extends Controller
     {
       return view('forms.declaration');  
     }
+
+    public function submit(Request $request)
+    {
+      dd($request->all());
+    }
 }

@@ -25,7 +25,7 @@
      </div>
       <div class="form-group mt-4" style="text-align: center">
          <a href="{{ url()->previous() }}" role="button" class='btn btn-danger'>Previous Page</a>
-         <button type='submit' id='submit' class='btn btn-outline-info' disabled>Submit</button>
+         <button type='submit' name='submit' id='submit' class='btn btn-outline-info' disabled>Submit</button>
       </div>
    </div>
    </div>

@@ -54,4 +54,8 @@ class User extends Authenticatable
     public function confidentials(){
         return $this->hasMany(Confidential::class);
     }
+
+    public function agreement(){
+        return $this->hasOne(Agreement::class);
+    }
 }

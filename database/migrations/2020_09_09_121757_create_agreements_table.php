@@ -14,7 +14,11 @@ class CreateAgreementsTable extends Migration
     public function up()
     {
         Schema::create('agreements', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->boolean('submit');
+            $table->unsignedBigInteger('user_id');
+            $table->index('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
