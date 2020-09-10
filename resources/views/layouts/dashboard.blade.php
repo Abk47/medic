@@ -125,7 +125,7 @@
               <li class="nav-item">
                 <a href="/user/forms/membership-form/details/create" class="nav-link {{ (request()->is('user/forms/membership-form*')) ? 'active': 'null' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Membership Form</p>
+                  <p>Membership Application</p>
                 </a>
               </li>
               <li class="nav-item">
