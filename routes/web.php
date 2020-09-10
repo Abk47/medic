@@ -49,7 +49,7 @@ Route::post('/user/forms/membership-form/confidential-medical-history/save','Con
 
 Route::delete('/user/forms/membership-form/confidential-medical-history/{id}','ConfidentialController@destroy')->name('confidential.destroy');
 
-Route::get('/user/forms/membership-form/declaration','AgreementController@show');
+Route::get('/user/forms/membership-form/declaration','AgreementController@show')->name('agreement.show');
 
 // For testing purpose
 Route::get('/user/status', function () {
