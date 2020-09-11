@@ -28,7 +28,7 @@ class DependantController extends Controller
         ]);
 
         auth()->user()->dependants()->create($request->all());
-        return redirect()->route('dependant.show');
+        return redirect()->route('dependant.show')->with('dependant_add','Dependant added successfully');
     }
 
     /**
@@ -56,7 +56,7 @@ class DependantController extends Controller
         $dependents= Dependant::findOrFail($id);
         if($dependents && $dependents->user_id){
             $dependents->delete();
-            return redirect()->route('dependant.show')->with('status','Dependant successfully deleted!');
+            return redirect()->route('dependant.show')->with('dependant_delete','Dependant successfully deleted!');
         } else{
             abort(404);
         }

@@ -25,9 +25,6 @@
 <!-- Theme style -->
 <link rel="stylesheet" href={{ asset("dist/css/adminlte.min.css") }}>
 
-{{-- Add toastr plugin  --}}
-<link rel="stylesheet" href={{ asset("plugins/toastr/toastr.min.css") }}/>
-
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper" id="app">
@@ -213,8 +210,9 @@
 <script src={{ asset("plugins/bootstrap/js/bootstrap.bundle.min.js")}}></script>
 <!-- AdminLTE App -->
 <script src={{ asset("dist/js/adminlte.min.js")}}></script>
-{{-- Toastr Script  --}}
-<script src={{ asset("plugins/toastr/toastr.min.js") }}></script>
+
+{{-- Sweet Alert 2  --}}
+<script src={{ asset("plugins/sweetalert2/sweetalert2.all.min.js") }}></script>
 
 {{-- Custom javascript --}}
 <script>
@@ -224,5 +222,44 @@ $('#terms').change(function () {
 }).change()
 </script>
 
+{{-- Display notification when a dependant is deleted  --}}
+@if(session('dependant_delete'))
+ <script>
+$(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 2000
+    });
+    Toast.fire({
+        icon: 'success',
+        title: '{{ session('dependant_delete') }}'
+      })
+})
+ </script>
+@endif
+
+{{-- Display notification when a dependant is added  --}}
+@if(session('dependant_add'))
+ <script>
+$(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 2000
+    });
+    Toast.fire({
+        icon: 'success',
+        title: '{{ session('dependant_add') }}'
+      })  
+})
+ </script>
+@endif
+
+
 </body>
 </html>
+
+
