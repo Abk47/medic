@@ -19,14 +19,17 @@
             undertake to assist in obtaining such information.
          </div>
       </div>
+      <form action="{{ route('agreement.store') }}" method="POST">
+         @csrf
       <div class="icheck-danger">
          <input type="checkbox" name="terms" id="terms" />
          <label for="terms"> I hereby acknowledge and agree to the above statement</label>
      </div>
       <div class="form-group mt-4" style="text-align: center">
          <a href="{{ url()->previous() }}" role="button" class='btn btn-danger'>Previous Page</a>
-         <button type='submit' name='submit' id='submit' class='btn btn-outline-info' disabled>Submit</button>
+         <button type='submit' id='send_form' class='btn btn-outline-info form_submit' disabled>Submit</button>
       </div>
+   </form>
    </div>
    </div>
 </div>

@@ -218,7 +218,7 @@
 <script>
 // Script for enabling submit button to be active after declaration
 $('#terms').change(function () {
-  $('#submit').prop("disabled", !this.checked);
+  $('#send_form').prop("disabled", !this.checked);
 }).change()
 </script>
 
@@ -258,6 +258,28 @@ $(function() {
  </script>
 @endif
 
+{{-- <script>
+  $('.form_submit').click(function() {
+    const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+
+})
+
+Swal.fire({
+  icon: 'success',
+  title: 'Thank you for submitting your application',
+  confirmButtonColor:'#dc3545'
+})
+setInterval(function(){
+  window.location.href = '/dashboard/user/1';
+ }, 2000)
+
+    });
+</script> --}}
 
 </body>
 </html>

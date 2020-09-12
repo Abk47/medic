@@ -51,6 +51,8 @@ Route::delete('/user/forms/membership-form/confidential-medical-history/{id}','C
 
 Route::get('/user/forms/membership-form/declaration','AgreementController@show')->name('agreement.show');
 
+Route::post('/user/forms/membership-form/declaration','AgreementController@store')->name('agreement.store');
+
 // For testing purpose
 Route::get('/user/status', function () {
     return redirect()->route('named_route', ['parameterKey' => 'value']);;
