@@ -36,7 +36,7 @@
                   </div>
                   <div class="form-group ">
                      <label for="QsnTextarea1">If Yes, please state name of insurers and policy numbers</label>
-                     <textarea class="form-control" id="QsnTextarea1" name='Insurer' rows="2" disabled></textarea>
+                     <textarea class="form-control" id="QsnTextarea1" name='Insurer' rows="2"></textarea>
                   </div>
                </li>
                <li>
