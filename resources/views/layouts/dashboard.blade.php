@@ -258,6 +258,42 @@ $(function() {
  </script>
 @endif
 
+{{-- Display notification when a form is submitted  --}}
+@if(session('form_success'))
+ <script>
+$(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 4000
+    });
+    Toast.fire({
+        icon: 'success',
+        title: '{{ session('form_success') }}'
+      })  
+})
+ </script>
+@endif
+
+{{-- Display notification when a form is submitted  --}}
+@if(session('form_message'))
+ <script>
+$(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 5000
+    });
+    Toast.fire({
+        icon: 'warning',
+        title: '{{ session('form_message') }}'
+      })  
+})
+ </script>
+@endif
+
 </body>
 </html>
 
