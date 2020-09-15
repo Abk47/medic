@@ -15,11 +15,11 @@ class CreateAgreementsTable extends Migration
     {
         Schema::create('agreements', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('submit');
+            $table->boolean('form_submit')->nullable();
+            $table->boolean('form_status')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->index('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamps();
         });
     }
 

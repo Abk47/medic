@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Agreement extends Model
 {
     protected $fillable = [
-        'submit'
+        'form_submit','form_status'
     ];
 
     public function User()
