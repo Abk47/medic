@@ -23,11 +23,12 @@
          @csrf
       <div class="icheck-danger">
          <input type="checkbox" name="terms" id="terms" />
-         <label for="terms"> I hereby acknowledge and agree to the above statement</label>
+         <label for="terms"> I have checked all the details carefully. I understand that once submitted, 
+         these details cannot be changed and entering the wrong details may result in the application being rejected.</label>
      </div>
       <div class="form-group mt-4" style="text-align: center">
          <a href="{{ url()->previous() }}" role="button" class='btn btn-danger'>Previous Page</a>
-         <button type='submit' id='send_form' class='btn btn-outline-info form_submit' disabled>Submit</button>
+         <button type='submit' id='send_form' class='btn btn-outline-info' disabled>Submit</button>
       </div>
    </form>
    </div>
