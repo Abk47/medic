@@ -12,13 +12,15 @@ public function __construct()
 
 public function show()
 {
-  return view('forms.declaration');  
+  $id = auth()->user()->id;
+  $status = Agreement::where('user_id',$id)->get();
+  return view('forms.declaration', compact('status'));  
 }
 
 public function store(Request $request)
 {
   $id = auth()->user()->id;
-  $status = Agreement::findOrFail($id);
+  $status = Agreement::find($id);
 
   if (empty($status)) {
   $status= new Agreement;
@@ -26,11 +28,12 @@ public function store(Request $request)
   $status->form_status = 0;
   $status->user_id= $id;
   $status->save();
-  return redirect()->route('index.dashboard',$id)->with('form_success','Thank You! Your application has been submitted!');
+  $request->session()->flash('form_success', 'Thank You! Your application has been submitted!');
+  return redirect()->route('index.dashboard', $id)->with('status', $status);
 }
-else{
-  $id = auth()->user()->id;
-  return redirect()->route('index.dashboard',$id)->with('form_message','The user form already exists in our records!');
-}
+  else{
+    $request->session()->flash('form_message', 'The user form already exists in our records!');
+    return redirect()->route('index.dashboard',$id)->with('status', $status);
+  }
 }
 }

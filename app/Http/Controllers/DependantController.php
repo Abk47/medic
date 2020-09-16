@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Dependant;
+use App\Agreement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,7 +42,8 @@ class DependantController extends Controller
     {
         $id = Auth::id();
         $dependents = Dependant::where('user_id',$id)->get();
-        return view('forms.dependents',compact('dependents'));
+        $status = Agreement::where('user_id',$id)->get();
+        return view('forms.dependents',compact('dependents','status'));
     }
 
     /**

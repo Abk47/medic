@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Agreement;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -12,6 +13,8 @@ class ContactController extends Controller
     }
 
     public function show(){
-        return view('contacts');
+        $id = auth()->user()->id;
+        $status = Agreement::where('user_id',$id)->get();
+        return view('contacts',compact('status'));
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Agreement;
 class AdminController extends Controller
 {
       /**
@@ -23,8 +24,9 @@ class AdminController extends Controller
      */
     public function index($user)
     {
-        $user = User::findOrFail($user);
-        return view('admin.index');
+        $id = auth()->user()->id;
+        $status = Agreement::where('user_id',$id)->get();
+        return view('admin.index',compact('status'));
     }
     
 }

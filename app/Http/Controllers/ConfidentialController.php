@@ -14,8 +14,10 @@ class ConfidentialController extends Controller
     
     public function show()
     {
-        $medicals = Confidential::where('user_id', auth()->user()->id)->get();
-        return view('forms.details',compact('medicals'));
+        $id = auth()->user()->id;
+        $medicals = Confidential::where('user_id', $id)->get();
+        $status = Agreement::where('user_id',$id)->get();
+        return view('forms.details',compact('medicals','status'));
     }
 
     public function store(Request $request)
@@ -39,7 +41,8 @@ class ConfidentialController extends Controller
         $dependents= Confidential::findOrFail($id);
         if($dependents && $dependents->user_id){
             $dependents->delete();
-            return redirect()->route('confidential.show')->with('status','Medical History successfully deleted!');
+            $request->session()->flash('status', 'Medical History successfully deleted!');
+            return redirect()->route('confidential.show');
         } else{
             abort(404);
         }

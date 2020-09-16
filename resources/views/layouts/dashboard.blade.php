@@ -139,10 +139,17 @@
           <li class="nav-item {{ (request()->is('user/status*')) ? 'menu-open': 'null' }}">
             <a href="/user/status" class="nav-link {{ (request()->is('user/status')) ? 'active': 'null' }}">
               <i class="nav-icon fas fa-spinner fa-spin"></i>
+              @if(count($status) === 1)
               <p>
                 Status
-                <span class="right badge badge-danger">Pending</span>
+                <span class="right badge badge-warning">Pending</span>
               </p>
+              @else
+              <p>
+                Status
+                <span class="right badge badge-danger">Not submitted</span>
+              </p>
+              @endif
             </a>
           </li>
           <li class="nav-item">

@@ -1,42 +1,34 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Agreement;
 use App\History;
-
 class HistoryController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
-
-    public function show(){
-        $history = History::find(auth()->user()->id);
-        if(empty($history)){
-            return view('forms.history');
+    public function show()
+    {
+        $history = History::find(auth()->user()
+            ->id);
+        if (empty($history))
+        {
+            $id = auth()->user()->id;
+            $status = Agreement::where('user_id', $id)->get();
+            return view('forms.history', compact('status'));
         }
-        return view('forms.editHistory',compact('history'));
+        return view('forms.editHistory', compact('history', 'status'));
     }
-
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         // Store data in database if it doesn't exist
-        $history = History::find(auth()->user()->id);
-        if(empty($history)){
-            $request->validate([
-                'Qsn1'=>'required',
-                'Qsn2'=>'required',
-                'Qsn3'=>'required',
-                'Qsn4'=>'required',
-                'Qsn5'=>'required',
-                'Qsn6'=>'required',
-                'Qsn7'=>'required',
-                'Qsn8'=>'required',
-                'Qsn9'=>'required',
-                'DoctorName'=>'required',
-            ]);
-
+        $history = History::find(auth()->user()
+            ->id);
+        if (empty($history))
+        {
+            $request->validate(['Qsn1' => 'required', 'Qsn2' => 'required', 'Qsn3' => 'required', 'Qsn4' => 'required', 'Qsn5' => 'required', 'Qsn6' => 'required', 'Qsn7' => 'required', 'Qsn8' => 'required', 'Qsn9' => 'required', 'DoctorName' => 'required', ]);
             $input = $request->Qsn1;
             $input1 = $request->Qsn2;
             $input2 = $request->Qsn3;
@@ -46,31 +38,22 @@ class HistoryController extends Controller
             $input6 = $request->Qsn7;
             $input7 = $request->Qsn8;
             $input8 = $request->Qsn9;
-
-            auth()->user()->history()->create($request->all());
-        // If a user chooses any YES option, redirected to a different page 
-            if($input1 == 'yes' || $input2 == 'yes' || $input3 == 'yes' || $input4 == 'yes' || $input5 == 'yes' || $input6 == 'yes' || $input7 == 'yes' || $input8 == 'yes' || $input == 'yes')
+            auth()
+                ->user()
+                ->history()
+                ->create($request->all());
+            // If a user chooses any YES option, redirected to a different page
+            if ($input1 == 'yes' || $input2 == 'yes' || $input3 == 'yes' || $input4 == 'yes' || $input5 == 'yes' || $input6 == 'yes' || $input7 == 'yes' || $input8 == 'yes' || $input == 'yes')
             {
                 return redirect()->route('confidential.show');
             }
-            return redirect()->route('agreement.show');
-        } 
+            return redirect()
+                ->route('agreement.show');
+        }
     }
-
-    public function update(Request $request){
-        $request->validate([
-            'Qsn1'=>'required',
-            'Qsn2'=>'required',
-            'Qsn3'=>'required',
-            'Qsn4'=>'required',
-            'Qsn5'=>'required',
-            'Qsn6'=>'required',
-            'Qsn7'=>'required',
-            'Qsn8'=>'required',
-            'Qsn9'=>'required',
-            'DoctorName'=>'required',
-        ]);
-
+    public function update(Request $request)
+    {
+        $request->validate(['Qsn1' => 'required', 'Qsn2' => 'required', 'Qsn3' => 'required', 'Qsn4' => 'required', 'Qsn5' => 'required', 'Qsn6' => 'required', 'Qsn7' => 'required', 'Qsn8' => 'required', 'Qsn9' => 'required', 'DoctorName' => 'required', ]);
         $input = $request->Qsn1;
         $input1 = $request->Qsn2;
         $input2 = $request->Qsn3;
@@ -80,21 +63,24 @@ class HistoryController extends Controller
         $input6 = $request->Qsn7;
         $input7 = $request->Qsn8;
         $input8 = $request->Qsn9;
-
         $user_id = auth()->user()->id;
         $medicalHistory = History::find($user_id);
-
-        if(isset($medicalHistory)){
+        if (isset($medicalHistory))
+        {
             $medicalHistory->update($request->all());
-    
-            // If a user chooses any YES option, redirected to a different page 
-            if($input1 == 'yes' || $input2 == 'yes' || $input3 == 'yes' || $input4 == 'yes' || $input5 == 'yes' || $input6 == 'yes' || $input7 == 'yes' || $input8 == 'yes' || $input == 'yes')
-                {
-                    return redirect()->route('confidential.show');
-                }
-                return redirect()->route('agreement.show');
-        } else{
+
+            // If a user chooses any YES option, redirected to a different page
+            if ($input1 == 'yes' || $input2 == 'yes' || $input3 == 'yes' || $input4 == 'yes' || $input5 == 'yes' || $input6 == 'yes' || $input7 == 'yes' || $input8 == 'yes' || $input == 'yes')
+            {
+                return redirect()->route('confidential.show');
+            }
+            return redirect()
+                ->route('agreement.show');
+        }
+        else
+        {
             abort(404);
         }
     }
 }
+

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Member;
+use App\Agreement;
 
 class MembersController extends Controller
 {
@@ -15,10 +16,12 @@ class MembersController extends Controller
     public function show(){
         $user_id = auth()->user()->id;
         $member = Member::find($user_id);
+        $status = Agreement::where('user_id',$user_id)->get();
+
         if(isset($member)){
-        return view('forms.infoEdit',compact('member'));
+        return view('forms.infoEdit',compact('member','status'));
         } else {
-            return view('forms.info');
+            return view('forms.info',compact('status'));
         }
     }
 
@@ -48,7 +51,8 @@ class MembersController extends Controller
     {
         $user_id = auth()->user()->id;
         $member = Member::findOrFail($user_id);
-        return view('forms.infoEdit',compact('member'));
+        $status = Agreement::where('user_id',$user_id)->get();
+        return view('forms.infoEdit',compact('member','status'));
     }
 
     /**
