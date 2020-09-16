@@ -5,8 +5,13 @@
 <div class="content-section ">
 <!-- Jumbotron -->
 <div class="jumbotron dashboard-jumbo">
+   @if(isset($status))
+   <h1 class="h2" style="font-weight: bold;">Thank You {{ ucfirst(Auth::user()->name) }} for submitting your application!</h1>
+   <p class="lead">An email will be sent to you once your application has been reviewed and accepted. You can track your application status at the dashboard panel.</p>
+   @else
     <h1 class="h2" style="font-weight: bold;">Welcome {{ ucfirst(Auth::user()->name) }} to Jubilee Insurance Medical Portal</h1>
     <p class="lead">This is a simple portal that you can use for your medical insurance application or cessation.</p>
+   @endif
  </div> <!-- /.end-jumbotron -->
 
  <!-- Get in touch -->
