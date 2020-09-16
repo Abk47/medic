@@ -32,7 +32,7 @@ public function store(Request $request)
   return redirect()->route('index.dashboard', $id)->with('status', $status);
 }
   else{
-    $request->session()->flash('form_message', 'The user form already exists in our records!');
+    $request->session()->flash('form_message', 'The form already exists in our records!');
     return redirect()->route('index.dashboard',$id)->with('status', $status);
   }
 }
