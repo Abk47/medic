@@ -11,14 +11,15 @@ class HistoryController extends Controller
     }
     public function show()
     {
-        $history = History::find(auth()->user()
-            ->id);
+        $history = History::find(auth()->user()->id);
         if (empty($history))
         {
             $id = auth()->user()->id;
             $status = Agreement::where('user_id', $id)->get();
             return view('forms.history', compact('status'));
         }
+            $id = auth()->user()->id;
+            $status = Agreement::where('user_id', $id)->get();
         return view('forms.editHistory', compact('history', 'status'));
     }
     public function store(Request $request)

@@ -237,7 +237,7 @@ $(function() {
       toast: true,
       position: 'top-end',
       showConfirmButton: false,
-      timer: 2000
+      timer: 3000
     });
     Toast.fire({
         icon: 'success',
@@ -255,11 +255,29 @@ $(function() {
       toast: true,
       position: 'top-end',
       showConfirmButton: false,
-      timer: 2000
+      timer: 3000
     });
     Toast.fire({
         icon: 'success',
         title: '{{ session('dependant_add') }}'
+      })  
+})
+ </script>
+@endif
+
+{{-- Display notification when a medical record is deleted  --}}
+@if(session('record'))
+ <script>
+$(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    Toast.fire({
+        icon: 'success',
+        title: '{{ session('record') }}'
       })  
 })
  </script>

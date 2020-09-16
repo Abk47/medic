@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Confidential;
+use App\Agreement;
 
 class ConfidentialController extends Controller
 {
@@ -41,8 +42,7 @@ class ConfidentialController extends Controller
         $dependents= Confidential::findOrFail($id);
         if($dependents && $dependents->user_id){
             $dependents->delete();
-            $request->session()->flash('status', 'Medical History successfully deleted!');
-            return redirect()->route('confidential.show');
+            return redirect()->route('confidential.show')->with('record', 'Medical Record successfully deleted!');
         } else{
             abort(404);
         }
