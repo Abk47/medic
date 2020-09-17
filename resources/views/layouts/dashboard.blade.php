@@ -142,7 +142,7 @@
               @if(count($status) === 1)
               <p>
                 Status
-                <span class="right badge badge-warning">Submitted</span>
+                <span class="right badge badge-info">Submitted</span>
               </p>
               @else
               <p>
