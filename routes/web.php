@@ -53,7 +53,8 @@ Route::get('/user/forms/membership-form/declaration','AgreementController@show')
 
 Route::post('/user/forms/membership-form/declaration','AgreementController@store')->name('agreement.store');
 
+use App\Mail\ConfirmationMail;
 // For testing purpose
-Route::get('/user/status', function () {
-    return redirect()->route('named_route', ['parameterKey' => 'value']);;
+Route::get('/email', function () {
+    return new ConfirmationMail();
 });
