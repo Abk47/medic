@@ -5,7 +5,7 @@
 <div class="content-section ">
 <!-- Jumbotron -->
 <div class="jumbotron dashboard-jumbo">
-   @if(isset($status))
+   @if(count($status) === 1)
    <h1 class="h2" style="font-weight: bold;">Thank You {{ ucfirst(Auth::user()->name) }} for submitting your application!</h1>
    <p class="lead">An email will be sent to you after your application has been reviewed and accepted. You can track the status of your application at the dashboard panel.</p>
    @else
