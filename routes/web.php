@@ -53,8 +53,10 @@ Route::get('/user/forms/membership-form/declaration','AgreementController@show')
 
 Route::post('/user/forms/membership-form/declaration','AgreementController@store')->name('agreement.store');
 
+// Email Testing
+use Illuminate\Support\Facades\Mail;
 use App\Mail\ConfirmationMail;
-// For testing purpose
-Route::get('/email', function () {
+Route::get('/email', function () {    
+    Mail::to('user@email.com')->send(new ConfirmationMail());
     return new ConfirmationMail();
 });
