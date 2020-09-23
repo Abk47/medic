@@ -52,11 +52,3 @@ Route::delete('/user/forms/membership-form/confidential-medical-history/{id}','C
 Route::get('/user/forms/membership-form/declaration','AgreementController@show')->name('agreement.show');
 
 Route::post('/user/forms/membership-form/declaration','AgreementController@store')->name('agreement.store');
-
-// Email Testing
-use Illuminate\Support\Facades\Mail;
-use App\Mail\ConfirmationMail;
-Route::get('/email', function () {    
-    Mail::to('user@email.com')->send(new ConfirmationMail());
-    return new ConfirmationMail();
-});
