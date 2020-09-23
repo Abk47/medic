@@ -94,7 +94,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ url('dashboard/user/'.Auth::user()->id) }}" class="brand-link">
-      <span class="brand-text font-weight-bold">Jubilee Insurance</span>
+      <span class="brand-text font-weight-bold">JUBILEE INSURANCE</span>
     </a>
 
     <!-- Sidebar -->
