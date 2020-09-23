@@ -28,5 +28,10 @@ class AdminController extends Controller
         $status = Agreement::where('user_id',$id)->get();
         return view('admin.index',compact('status'));
     }
+
+    public function show()
+    {
+        return view('admin.admin');
+    }
     
 }
