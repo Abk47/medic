@@ -31,7 +31,7 @@ class AdminController extends Controller
 
     public function show()
     {
-        return view('admin.admin');
+        return view('admin.panel');
     }
     
 }
