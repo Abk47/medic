@@ -180,8 +180,16 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              @if ((request()->is('dashboard/user*')))
+              <li class="breadcrumb-item"><a href="{{ url('dashboard/user/'.Auth::user()->id) }}">Home</a></li>
               <li class="breadcrumb-item active">Dashboard</li>
+              @elseif((request()->is('user*')))
+              <li class="breadcrumb-item"><a href="{{ url('dashboard/user/'.Auth::user()->id) }}">Home</a></li>
+              <li class="breadcrumb-item active">Forms</li>
+              @else
+              <li class="breadcrumb-item"><a href="{{ url('dashboard/user/'.Auth::user()->id) }}">Home</a></li>
+              <li class="breadcrumb-item active">Contacts</li>
+              @endif
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
