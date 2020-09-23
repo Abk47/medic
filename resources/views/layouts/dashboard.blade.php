@@ -93,7 +93,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="{{ url('dashboard/user/'.Auth::user()->id) }}" class="brand-link">
       <span class="brand-text font-weight-bold">Jubilee Insurance</span>
     </a>
 
@@ -137,7 +137,7 @@
             </ul>
           </li>
           <li class="nav-item {{ (request()->is('user/status*')) ? 'menu-open': 'null' }}">
-            <a href="/user/status" class="nav-link {{ (request()->is('user/status')) ? 'active': 'null' }}">
+            <a href="#" class="nav-link {{ (request()->is('user/status')) ? 'active': 'null' }}">
               <i class="nav-icon fas fa-spinner fa-spin"></i>
               @if(count($status) === 1)
               <p>
@@ -176,7 +176,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
+            @if ((request()->is('dashboard/user*')))
             <h1 class="m-0 text-dark">Dashboard</h1>
+            @elseif((request()->is('contacts')))
+            <h1 class="m-0 text-dark">Contacts</h1>
+            @else
+            <h1 class="m-0 text-dark">Forms</h1>
+            @endif
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
