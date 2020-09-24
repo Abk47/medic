@@ -52,6 +52,79 @@
             @endforeach
          </tbody>
       </table>
+
+{{-- A question preview table to help users refer to the question they have answered--}}
+      <details>
+         <summary style="color: #b50c2e"><strong>Click here for a quick preview of the questions asked</strong></summary>
+        <table class="table table-hover">
+           <tr>
+              <th scope="col">#</th>
+              <th scope="col">Question</th>
+           </tr>
+           <tr>
+              <th scope="row">2</th>
+              <td>
+               Have you or any member of your family proposed for this insurance had medical and surgical or other 
+               form of health treatment during the past three years?
+              </td>
+           </tr>
+           <tr>
+              <th scope="row">3</th>
+              <td>
+               Have you or any member of your family proposed for this insurance 
+               suffered at any time from or become aware of any tendency to infection of the chest, 
+               heart, spine, glands, bones or joints, digestive organs, kidneys, bladder or other organs?
+              </td>
+           </tr>
+           <tr>
+              <th scope="row">4</th>
+              <td>
+               Have you or any member of your family proposed for this insurance suffered at any time from rheumatism, 
+               diabetes, gastric or duodenal ulceration, paralysis, gout, asthma, blood spitting, hernia, rheumatic fever, 
+               tuberculosis or from any nervous disease?
+              </td>
+           </tr>
+           <tr>
+              <th scope="row">5</th>
+              <td>
+               Have you or any member of your family proposed for this insurance suffered from any 
+               complaint which may necessitate a surgical operation or for which you reasonably 
+               anticipate the necessity of treatment? 
+              </td>
+           </tr>
+           <tr>
+              <th scope="row">6</th>
+              <td>
+               Have you or any member of your family proposed for this insurance suffered
+               from chronic/long term medical or dental condition or is there any other known disability,
+               abnormality or recurrent illness or injury?
+              </td>
+           </tr>
+           <tr>
+              <th scope="row">7</th>
+              <td>
+               Have any of your immediate relatives (child, father, mother, sister or brother) suffered 
+               from rheumatism, gout, kidney related problem, high blood pressure, cancer, diabetes, heart disease, 
+               asthma, tuberculosis, epilepsy, blood disorder or any chronic illness?
+              </td>
+           </tr>
+           <tr>
+              <th scope="row">8</th>
+              <td>
+               Are you or any member of your family proposed for insurance now under observation or 
+               taking treatment or medication for any disease or disorder?
+              </td>
+           </tr>
+           <tr>
+              <th scope="row">9</th>
+              <td>
+               Do you or any member of your family proposed for insurance currently pursue or 
+               intend to pursue any profession, occupation, sport or hobby which is hazardous?
+              </td>
+           </tr>
+         </table>
+     </details>
+
       <div class="container mt-4" style="text-align: center">
          <div class="row" style="display: inline-block">
             <!-- Adding a modal here -->
@@ -81,7 +154,6 @@
                               <div class="col">
                                  <select class="custom-select" name="QsnID">
                                     <option selected disabled>Choose a number</option>
-                                    <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
