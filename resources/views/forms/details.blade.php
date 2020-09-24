@@ -56,9 +56,6 @@
          <div class="row" style="display: inline-block">
             <!-- Adding a modal here -->
             <!-- Button trigger modal -->
-            {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#familyModal">
-            Add details
-            </button> --}}
             <!-- Modal -->
             <div class="modal fade" id="familyModal" tabindex="-1" role="dialog" aria-labelledby="familyModalLabel" aria-hidden="true">
                <div class="modal-dialog" role="document">
