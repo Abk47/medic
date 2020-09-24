@@ -31,7 +31,9 @@ class AdminController extends Controller
 
     public function show()
     {
-        return view('admin.panel');
+        $registeredUsers = count(User::all());
+        $submittedForms = count(Agreement::all());
+        return view('admin.panel',compact('registeredUsers','submittedForms'));
     }
     
 }
