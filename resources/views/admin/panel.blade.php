@@ -8,7 +8,7 @@
           <!-- small box -->
           <div class="small-box bg-secondary">
             <div class="inner">
-              <h3>84</h3>
+              <h3>{{ $registeredUsers }}</h3>
 
               <p>Users Registered</p>
             </div>
@@ -23,7 +23,7 @@
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>13</h3>
+              <h3>{{ $submittedForms }}</h3>
 
               <p>Forms Submitted</p>
             </div>
